@@ -24,6 +24,7 @@ public class Player implements Serializable {
 	// associations
 	private User user = null;
 	private Game game = null;
+	public int anzahlSteine;
 
 	/**********************************
 	 * Constructors
@@ -32,6 +33,7 @@ public class Player implements Serializable {
 	public Player(User u, Game g) {
 		user = u;
 		game = g;
+		anzahlSteine = 15;
 	}
 
 	/**********************************

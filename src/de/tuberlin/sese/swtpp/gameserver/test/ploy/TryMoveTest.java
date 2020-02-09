@@ -44,13 +44,13 @@ public class TryMoveTest {
 		if (white)
 			assertEquals(expectedResult, game.tryMove(move, whitePlayer));
 		else 
-			assertEquals(expectedResult,game.tryMove(move, blackPlayer));
+			assertEquals(expectedResult, game.tryMove(move, blackPlayer));
 	}
 	
 	public void assertGameState(String expectedBoard, boolean whiteNext, boolean finished, boolean whiteWon) {
 		String board = game.getBoard().replaceAll("e", "");
 		
-		assertEquals(expectedBoard,board);
+		assertEquals(expectedBoard, board);
 		assertEquals(finished, game.isFinished());
 
 		if (!game.isFinished()) {
@@ -69,7 +69,7 @@ public class TryMoveTest {
 	@Test
 	public void exampleTest() {
 		startGame(",w84,w41,w56,w170,w56,w41,w84,/,,w24,w40,w17,w40,w48,,/,,,w16,w16,w16,,,/,,,,,,,,/,,,,,,,,/,,,,,,,,/,,,b1,b1,b1,,,/,,b3,b130,b17,b130,b129,,/,b69,b146,b131,b170,b131,b146,b69,",false);
-		assertMove("e3-e4-0",false,true);
+		assertMove("e3-e4-4",false,true);
 		assertGameState(",w84,w41,w56,w170,w56,w41,w84,/,,w24,w40,w17,w40,w48,,/,,,w16,w16,w16,,,/,,,,,,,,/,,,,,,,,/,,,,b1,,,,/,,,b1,,b1,,,/,,b3,b130,b17,b130,b129,,/,b69,b146,b131,b170,b131,b146,b69,",true,false,false);
 	}
 

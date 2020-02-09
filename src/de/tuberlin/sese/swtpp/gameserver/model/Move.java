@@ -2,6 +2,7 @@ package de.tuberlin.sese.swtpp.gameserver.model;
 
 import java.io.Serializable;
 
+
 /**
  * 
  * Represents one move of a player in a certain stage of the game.
@@ -19,6 +20,9 @@ public class Move implements Serializable {
 	// attributes
 	protected String move;
 	protected String board;
+	public String now;
+	public String later;
+	public int drehungen;
 
 	// associations
 	protected Player player;
@@ -29,6 +33,9 @@ public class Move implements Serializable {
 
 	public Move(String move, String boardBefore, Player player) {
 		this.move = move;
+		this.now = move.substring(0, 2);
+		this.later = move.substring(3, 5);
+		this.drehungen = Integer.parseInt(move.substring(6));
 		this.board = boardBefore;
 		this.player = player;
 	}
@@ -60,4 +67,5 @@ public class Move implements Serializable {
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
+
 }
